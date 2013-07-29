@@ -40,12 +40,12 @@
       <div class="navbar-inner">
         <div class="container">
           <div class="container">
-            <%# if user_signed_in? %>
-              Signed in as <%#= current_user.email %> | <%#= link_to "Sign Out", destroy_user_session_path%>
-            <%# else %>
-              <%#= link_to "Sign in", new_user_session_path %> |
-              <%#= link_to "Sign up", new_user_registration_path %>
-            <%# end %>
+            <% if user_signed_in? %>
+              Signed in as <%= current_user.email %> | <%= link_to "Sign Out", destroy_user_session_path%>
+            <% else %>
+              <%= link_to "Sign in", new_user_session_path %> |
+              <%= link_to "Sign up", new_user_registration_path %>
+            <% end %>
 
             <h2> <%= link_to "Questions" , quests_path %> </h2>
             <% flash.each do |key, value| %>
